@@ -1,9 +1,7 @@
-#importing libraries
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
-
 import streamlit as st
 
 from sklearn.model_selection import train_test_split
@@ -24,9 +22,9 @@ df_diabetes.head()
 df_diabetes['Label'] = df_diabetes['Outcome'].map({0:'Non-Diabetic', 1:'Diabeteic'})
 #correlation 
 df_corr=df_diabetes.corr()
-plt.figure(figsize=(20,8))
+
 sns.heatmap(df_corr, annot=True, cmap='Blues')
-plt.show()
+
 
 #Training our model
 features=df_diabetes[['Glucose','BloodPressure', 'DiabetesPedigreeFunction']]
